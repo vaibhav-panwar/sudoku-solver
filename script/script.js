@@ -1,11 +1,5 @@
-// window.onload = initial();
-// function reset() {
-//     let inpArr = document.getElementsByClassName('num');
-//     console.log(inpArr);
-//     for (let i = 0; i < inpArr.length; i++) {
-//         inpArr[i].value = "";
-//     }
-// }
+
+
 let ipArr = document.getElementsByClassName('num');
 
 for(let i=0;i<ipArr.length;i++){
@@ -45,6 +39,8 @@ for(let i=0;i<ipArr.length;i++){
 }
 
 document.getElementById("solve").addEventListener('click',sol);
+document.getElementById("reset").addEventListener("click",reset);
+
 function sol(){
 let sudoku = [];
 let a = 0;
@@ -197,4 +193,11 @@ function isitRight(arr, i, j, k) {
         }
     }
     return true
+}
+function reset() {
+    let inpArr = document.getElementsByClassName('num');
+    console.log(inpArr);
+    for (let i = 0; i < inpArr.length; i++) {
+        inpArr[i].value = "";
+    }
 }

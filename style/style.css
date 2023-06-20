@@ -5,19 +5,28 @@
 
 h1 {
     display: block;
+    font-size: 40px;
+    font-weight: 550;
     width: fit-content;
     margin: auto;
 }
-
+#cont{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+}
 #bigcont {
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     width: 500px;
     height: 500px;
-    border: 2px solid black;
-    padding: 10px;
-    gap: 5px;
+    border: 3px solid black;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    border: 3px solid black;
 }
 
 .num {
@@ -33,4 +42,49 @@ input:focus {
     outline: none;
     border-radius: 0;
     border: 1.5px solid black;
+    background-color: rgb(230, 230, 250);
+}
+.btn{
+    margin: 20px;
+}
+.btn>button{
+    outline: none;
+    border: none;
+    background-color: orangered;
+    color: white;
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+    font-size: 20px;
+    margin-right: 20px;
+}
+.btn>button:hover{
+    cursor: pointer;
+}
+#instructions>h2,p,h3{
+    margin-left: 20px;
+}
+#instructions>h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+#instructions>p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+#instructions>h3{
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+@media (max-width: 992px) {
+  #cont{
+    grid-template-columns: repeat(1,1fr);
+  }
+}
+
+@media (max-width: 576px) {
+
 }
