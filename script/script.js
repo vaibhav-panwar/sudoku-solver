@@ -1,6 +1,6 @@
 
 
-let ipArr = document.getElementsByClassName('num');
+let ipArr = document.querySelectorAll("input");
 
 for(let i=0;i<ipArr.length;i++){
     ipArr[i].addEventListener('keydown',(e)=>{
@@ -54,14 +54,13 @@ while(a<ipArr.length){
     sudoku.push(arr);
     k = k+9;
 }
+
 let res  = [];
 fun(sudoku,0,0);
 if(res.length ===0){
     alert("this problem can't be solved")
 }
-else{
-    console.log(res[0]);
-}
+
 //fun function
     function fun(input, i, j) {
 
