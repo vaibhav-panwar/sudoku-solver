@@ -1,9 +1,9 @@
 // window.onload = initial();
-// function initial() {
+// function reset() {
 //     let inpArr = document.getElementsByClassName('num');
 //     console.log(inpArr);
 //     for (let i = 0; i < inpArr.length; i++) {
-//         inpArr[i].value = 0;
+//         inpArr[i].value = "";
 //     }
 // }
 let ipArr = document.getElementsByClassName('num');
@@ -17,7 +17,23 @@ for(let i=0;i<ipArr.length;i++){
             ipArr[i].value = n;
             ipArr[i+1].focus()
         }
-        else if(key === "Backspace" && ipArr[i].value==="" && i>0){
+        else if (key === "ArrowRight"   && i<ipArr.length-1){
+            e.preventDefault();
+            ipArr[i + 1].focus()
+        }
+        else if (key === "ArrowDown" && i < ipArr.length - 9) {
+            e.preventDefault();
+            ipArr[i + 9].focus()
+        }
+        else if (key === "ArrowLeft" && i>0) {
+            e.preventDefault();
+            ipArr[i - 1].focus()
+        }
+        else if (key === "ArrowUp" && i>8) {
+            e.preventDefault();
+            ipArr[i - 9].focus()
+        }
+        else if (key === "Backspace" && ipArr[i].value === "" && i > 0) {
             e.preventDefault();
             ipArr[i - 1].focus()
         }
@@ -55,13 +71,13 @@ else{
 
         if (i == input.length) {
             res.push(input)
+            let k = 0;
             for (let a = 0; a < input.length; a++) {
-                let bag = ""
                 for (let b = 0; b < input.length; b++) {
-
-                    bag += input[a][b] + " ";
+                    ipArr[k].value = input[a][b];
+            
+                    k++;
                 }
-                console.log(bag)
             }
             return
         }
@@ -75,7 +91,7 @@ else{
             nj = j + 1;
         }
 
-        if (input[i][j] != 0) {
+        if (input[i][j] != 0 && input[i][j] != "" ) {
             fun(input, ni, nj);
         }
         else {
